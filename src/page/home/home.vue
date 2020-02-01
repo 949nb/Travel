@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>home</h1>
+    <h1 @click="add">Hello, world</h1>
+    <br/>
+    <div>{{n}}</div>
   </div>
 </template>
 
@@ -9,9 +11,14 @@ export default {
   name: 'Home',
   data() {
     return {
-
+      n: 1
     }
-  }
+  },
+  methods: {
+    add() {
+      this.n++
+    }
+  },
 }
 </script>
 
