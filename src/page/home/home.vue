@@ -1,23 +1,26 @@
 <template>
   <div>
-    <h1 @click="add">Hello, world</h1>
-    <br/>
-    <div>{{n}}</div>
+    <HomeHeader />
+    
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#isousuo"></use>
+    </svg>
   </div>
 </template>
 
 <script>
+import HomeHeader from './components/Header'
 export default {
   name: 'Home',
+  components: {
+    HomeHeader
+  },
   data() {
     return {
-      n: 1
+
     }
   },
   methods: {
-    add() {
-      this.n++
-    }
   },
 }
 </script>
