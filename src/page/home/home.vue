@@ -1,10 +1,6 @@
 <template>
   <div>
     <HomeHeader />
-    
-    <svg class="icon" aria-hidden="true">
-      <use xlink:href="#isousuo"></use>
-    </svg>
   </div>
 </template>
 
