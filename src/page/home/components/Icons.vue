@@ -4,9 +4,9 @@
       <swiper-slide v-for="(page, index) in pages" :key="index">
         <div class="icon" v-for="(item) in page" :key="item.id">
           <div class="icon-img">
-            <img class="icon-img-content" :src="item.src" alt="">
+            <img class="icon-img-content" :src="item.imgUrl" alt="">
           </div>
-          <p class="icon-desc">{{item.info}}</p>
+          <p class="icon-desc">{{item.desc}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -16,57 +16,7 @@
 <script>
  export default {
    name: 'HomeIcons',
-   data() {
-     return {
-       iconList: [
-         {
-           id: '0001',
-           src: 'https://picbed.qunarzz.com/01d2f57f920666364197a850dab859a8.png',
-           info: '民宿客栈'
-         },
-         {
-           id: '0002',
-           src: 'https://picbed.qunarzz.com/83af731055e121a3251690b225327b56.png',
-           info: '专车自驾'
-         },
-         {
-           id: '0003',
-           src: 'https://picbed.qunarzz.com/5b6737be49ca243072ca614f07803b83.png',
-           info: '赚钱-信用卡'
-         },
-         {
-           id: '0004',
-           src: 'https://picbed.qunarzz.com/1e107321f5396ea4994cd832232ecf8a.png',
-           info: '旅游团购'
-         },
-         {
-           id: '0005',
-           src: 'https://picbed.qunarzz.com/01d2f57f920666364197a850dab859a8.png',
-           info: '民宿客栈'
-         },
-         {
-           id: '0006',
-           src: 'https://picbed.qunarzz.com/83af731055e121a3251690b225327b56.png',
-           info: '专车自驾'
-         },
-         {
-           id: '0007',
-           src: 'https://picbed.qunarzz.com/5b6737be49ca243072ca614f07803b83.png',
-           info: '赚钱-信用卡'
-         },
-         {
-           id: '0008',
-           src: 'https://picbed.qunarzz.com/1e107321f5396ea4994cd832232ecf8a.png',
-           info: '旅游团购'
-         },
-         {
-           id: '0009',
-           src: 'https://picbed.qunarzz.com/1e107321f5396ea4994cd832232ecf8a.png',
-           info: '旅游团购'
-         }
-       ]
-     }
-   },
+   props: ['iconList'],
    computed: {
      pages() {
        const pages = []

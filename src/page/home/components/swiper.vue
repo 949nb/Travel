@@ -2,7 +2,7 @@
   <div class="wrapper">
     <swiper :options="swiperOption">
       <swiper-slide v-for="(item, index) in this.swiperList" :key="index">
-        <img class="swiper-img" :src="item.url" />
+        <img class="swiper-img" :src="item.imgUrl" />
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
@@ -12,6 +12,7 @@
 <script>
 export default {
   name: 'AwesomeSwiper',
+  props: ['swiperList'],
   data() {
     return {
       swiperOption: {
@@ -19,17 +20,7 @@ export default {
         pagination: {
           el: '.swiper-pagination'
         }
-      },
-      swiperList : [
-        {
-          id: '0001',
-          url: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20201/be6871c9b0b0ffab3ef2a86fa9688677.jpg'
-        },
-        {
-          id: '0002',
-          url: 'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/201912/0b26e9760c2673c63c05e1efce1275ea.jpg_750x200_495c0a72.jpg'
-        }
-      ]
+      }
     }
   }
 }
@@ -43,7 +34,7 @@ export default {
     overflow: hidden
     width: 100%
     height: 0
-    padding-bottom: 26.66%
+    padding-bottom: 31%
     // padding的百分比是相较与父级元素宽度的百分比
     /*border: 1px solid red;*/
     .swiper-img

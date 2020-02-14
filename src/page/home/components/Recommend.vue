@@ -3,7 +3,7 @@
     <div class="recommend-title">热销推荐</div>
     <ul>
       <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
-        <img class="item-img" :src="item.src" alt="">
+        <img class="item-img" :src="item.imgUrl" alt="">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
@@ -18,36 +18,7 @@
 
   export default {
     name: 'HomeRecommend',
-    data() {
-      return {
-        recommendList: [
-          {
-            id: '0001',
-            title: '大连红烂漫洗浴中心',
-            src: 'https://source.unsplash.com/random/140x140',
-            desc: '浪漫大连首选，浪漫的洗浴中心...'
-          },
-          {
-            id: '0002',
-            title: '大连红烂漫洗浴中心',
-            src: 'https://source.unsplash.com/random/140x140',
-            desc: '浪漫大连首选，浪漫的洗浴中心...'
-          },
-          {
-            id: '0003',
-            title: '大连红烂漫洗浴中心',
-            src: 'https://source.unsplash.com/random/140x140',
-            desc: '浪漫大连首选，浪漫的洗浴中心...'
-          },
-          {
-            id: '0004',
-            title: '大连红烂漫洗浴中心',
-            src: 'https://source.unsplash.com/random/140x140',
-            desc: '浪漫大连首选，浪漫的洗浴中心...'
-          },
-        ]
-      }
-    }
+    props: ['recommendList']
   }
 </script>
 

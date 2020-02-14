@@ -2,9 +2,9 @@
   <div class="recommend">
     <div class="recommend-title">周末去哪</div>
     <ul>
-      <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item in weekendList" :key="item.id">
         <div class="item-img-wrapper">
-          <img class="item-img" :src="item.src" alt="">
+          <img class="item-img" :src="item.imgUrl" alt="">
         </div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -19,43 +19,13 @@
 
   export default {
     name: 'HomeWeekend',
-    data() {
-      return {
-        recommendList: [
-          {
-            id: '0001',
-            title: '大连红烂漫洗浴中心',
-            src: 'https://source.unsplash.com/random/640x214',
-            desc: '浪漫大连首选，浪漫的洗浴中心...'
-          },
-          {
-            id: '0002',
-            title: '大连红烂漫洗浴中心',
-            src: 'https://source.unsplash.com/random/640x214',
-            desc: '浪漫大连首选，浪漫的洗浴中心...'
-          },
-          {
-            id: '0003',
-            title: '大连红烂漫洗浴中心',
-            src: 'https://source.unsplash.com/random/640x214',
-            desc: '浪漫大连首选，浪漫的洗浴中心...'
-          },
-          {
-            id: '0004',
-            title: '大连红烂漫洗浴中心',
-            src: 'https://source.unsplash.com/random/640x214',
-            desc: '浪漫大连首选，浪漫的洗浴中心...'
-          },
-        ]
-      }
-    }
+    props: ['weekendList']
   }
 </script>
 
 <style lang="stylus" scoped>
   @import "~styles/mixins.styl"
   .recommend-title
-    margin-top .2rem
     line-height .8rem
     background #eee
     text-indent .2rem
