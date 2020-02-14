@@ -89,25 +89,27 @@
   .icons >>> .swiper-container
     height: 0
     padding-bottom: 50%
-  .icon
-    overflow: hidden
-    height: 0
-    float: left
-    width: 25%
-    padding-bottom: 25%
-    /*background #25a4bb*/
-    .icon-img
-      /*padding-bottom .44rem*/
-      width: 100%
+  .icons
+    margin-top .1rem
+    .icon
+      overflow: hidden
       height: 0
-      overflow hidden
-      padding-bottom 1.40rem
-      text-align center
-      .icon-img-content
-        height 1.4rem
-    .icon-desc
-      line-height .44rem
-      text-align center
-      ellipsis()
-      /*border 1px solid*/
+      float: left
+      width: 25%
+      padding-bottom: 25%
+      /*background #25a4bb*/
+      .icon-img
+        /*padding-bottom .44rem*/
+        width: 100%
+        height: 0
+        overflow hidden
+        padding-bottom 1.40rem
+        text-align center
+        .icon-img-content
+          height 1.4rem
+      .icon-desc
+        line-height .44rem
+        text-align center
+        ellipsis()
+        /*border 1px solid*/
 </style>
