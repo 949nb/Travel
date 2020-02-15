@@ -17,10 +17,11 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="item in alphabet">
+      <div class="area" v-for="item in alphabet" :key="item">
         <div class="title border-topbottom">{{item}}</div>
         <div class="item-list">
-          <div class="item border-bottom" v-for="itemList in allCity[item]"> {{itemList.name}} </div>
+          <div class="item border-bottom" v-for="itemList in allCity[item]" :key="itemList.id"> {{itemList.name}}
+          </div>
         </div>
       </div>
     </div>
