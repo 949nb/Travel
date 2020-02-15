@@ -9,12 +9,12 @@
 </template>
 
 <script>
-  import BScroll from 'better-scroll'
+  // import BScroll from 'better-scroll'
   export default {
     name: "CityAlphabet",
     props: [''],
     mounted() {
-      this.scroll = new BScroll(this.$refs.listScroll)
+      // this.scroll = new BScroll(this.$refs.listScroll.$el)
     }
   }
 </script>
