@@ -1,5 +1,4 @@
 const path = require('path');
-const mockData = require('./public/static/mock/index')
 
 function resolve(dir) {
   return path.join(__dirname, dir);

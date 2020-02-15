@@ -17,6 +17,7 @@
 <script>
 export default {
   name: 'Header',
+  props: ['cityList'],
   data() {
     return {}
   },
