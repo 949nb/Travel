@@ -2,8 +2,8 @@
   <div>
     <CityHeader />
     <CitySearch />
-    <CityList />
-    <CityAlphabet />
+    <CityList :all-city="allCity" :hot-city="hotCity"/>
+    <CityAlphabet :all-city="allCity" />
   </div>
 </template>
 
@@ -12,13 +12,35 @@
   import CitySearch from './components/Search'
   import CityList from './components/List'
   import CityAlphabet from './components/Alphabet'
-  export default {
+  import { getCityData } from "@/api/common.js"
+
+export default {
   name: "City",
   components: {
     CityHeader,
     CitySearch,
     CityList,
     CityAlphabet
+  },
+  data() {
+    return {
+      allCity: {},
+      hotCity: {}
+    }
+  },
+  mounted() {
+    this.getCityInfo()
+  },
+  methods: {
+    getCityInfo() {
+      getCityData()
+        .then(res => {
+          if (res.ret) {
+            this.allCity = res.data.cities
+            this.hotCity = res.data.hotCities
+          }
+        })
+    },
   }
 }
 </script>
