@@ -1,13 +1,13 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <span class="iconfont"> &#xe624; </span>
+      <span class="iconfont">&#xe62d;</span>
     </div>
     <div class="header-input">
       <span class="iconfont">&#xe632;</span>
       输入/城市/游玩/主题
     </div>
-    <div class="header-right">
+    <div class="header-right" @click="jumpToCity">
       城市
       <span class="iconfont">&#xe62d;</span>
     </div>
@@ -21,21 +21,26 @@ export default {
   data() {
     return {}
   },
-  methods: {}
+  methods: {
+    jumpToCity() {
+      this.$router.push('/city')
+    }
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
-  @import ('~styles/varibles.styl');
+  @import '~styles/varibles.styl'
   .header
     display: flex
     background: $bgColor
-    line-height: .86rem
+    line-height: $headerHeight
     color: #fff
     .header-left
       width: .64rem
       float: left
       text-align: center
+      transform rotate(90deg)
     .header-input
       padding-left: .2rem
       flex: 1
