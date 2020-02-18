@@ -17,8 +17,8 @@
           </div>
         </div>
       </div>
-      <div class="area" v-for="item in alphabet" :key="item">
-        <div class="title border-topbottom">{{item}}</div>
+      <div class="area" v-for="item in alphabetList" :key="item">
+        <div class="title border-topbottom" :ref="item">{{item}}</div>
         <div class="item-list">
           <div class="item border-bottom" v-for="itemList in allCity[item]" :key="itemList.id"> {{itemList.name}}
           </div>
@@ -37,9 +37,19 @@
       this.scroll = new BScroll(this.$refs.listScroll)
     },
     computed: {
-      alphabet() {
+      alphabetList() {
         const alphabet = Object.keys(this.allCity)
         return alphabet
+      },
+      alphabet() {
+        return this.$store.state.alphabet
+      }
+    },
+    watch: {
+      alphabet: {
+        handler(newV) {
+          this.scroll.scrollToElement(this.$refs[newV][0])
+        }
       }
     }
   }
